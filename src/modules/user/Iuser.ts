@@ -1,4 +1,5 @@
 export interface Iuser {
+    email: string;
     nome: string;
     cidade: string;
     dataNascimento: Date;
@@ -14,12 +15,13 @@ export interface Iuser {
     limiteDeslikes: number;
     limiteLikes: number;
     superLikesCount : number;
-    matchesCount : number;
     likesCount : number;
     deslikesCount : number;
     eventsCount : number;
+    localidade : string;
     
-
+    getEmail(): string;
+    setEmail(email:string): void;
     getSuperLikesCount(): number;
     setSuperLikesCount(superLikesCount: number): void;
     getNome(): string;
@@ -40,8 +42,6 @@ export interface Iuser {
     setDescricao(descricao: string): void;
     getPrefSexual(): string;
     setPrefSexual(prefSexual: string): void;
-    getLimiteMatch(): number;
-    setLimiteMatch(limiteMatch: number): void;
     getLimiteUsers(): number;
     setLimiteUsers(limiteUsers: number): void;
     getLimiteSuperlike(): number;
@@ -52,5 +52,16 @@ export interface Iuser {
     setLimiteDeslikes(limiteDeslikes: number): void;
     getLimiteLikes(): number;
     setLimiteLikes(limiteLikes: number): void;
+    getSuperLikesCount() : number;
+    setSuperLikesCount(superLikesCount: number) :void;
+    getLikesCount() : number;
+    setLikesCount(likesCount: number) : void;
+    getDeslikesCount() : number;
+    setDeslikesCount(deslikesCount: number): void;
+    getEventsCount() : number;
+    setEventsCount(eventsCount: number): void;
+    getLocalidade() : string;
+    setLocalidade(localidade: string): void;
+
 
 }

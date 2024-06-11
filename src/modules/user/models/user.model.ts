@@ -1,28 +1,43 @@
-export class user {
+import { Iuser } from "../Iuser";
 
-    private cidade : string;
-    private dataNascimento : Date;
-    private estado : string;
-    private nome : string;
-    private sexo : string;
-    private telefone : string;
-    private fotoPerfil : string;
-    private descricao : string;
-    private prefSexual : string;
-    private limiteMatch : number;
-    private limiteUsers : number;
-    private limiteSuperlike : number;
-    private limiteEvents : number;
-    private limiteDeslikes : number;
-    private limiteLikes: number;
+
+export class User implements Iuser{
+
+    email: string;
+    nome: string;
+    cidade: string;
+    dataNascimento: Date;
+    estado: string;
+    sexo: string;
+    telefone: string;
+    fotoPerfil: string;
+    descricao: string;
+    prefSexual: string;
+    limiteUsers: number;
+    limiteSuperlike: number;
+    limiteEvents: number;
+    limiteDeslikes: number;
+    limiteLikes: number;
+    superLikesCount : number;
+    likesCount : number;
+    deslikesCount : number;
+    eventsCount : number;
+    usersCount : number;
+    localidade : string;
+
     
-    constructor(cidade : string, dataNascimento : Date, estado : string, nome : string, sexo : string, telefone : string){
-        this.cidade = cidade;
-        this.dataNascimento = dataNascimento;
-        this.estado = estado;
-        this.nome = nome;
-        this.sexo = sexo;
-        this.telefone = telefone;
+    
+    constructor(){
+        this.limiteUsers = 30;
+        this.limiteSuperlike = 0;
+        this.limiteEvents = 1;
+        this.limiteDeslikes = 0;
+        this.limiteLikes = 15;
+        this.superLikesCount = 0;
+        this.likesCount = 0;
+        this.deslikesCount = 0;
+        this.eventsCount = 0;
+        this.usersCount = 0;
     }
 
     public getNome() : string {
@@ -97,13 +112,6 @@ export class user {
         this.prefSexual = prefSexual;
     }
 
-    public getLimiteMatch() : number {
-        return this.limiteMatch;
-    }
-
-    public setLimiteMatch(limiteMatch : number) : void {
-        this.limiteMatch = limiteMatch;
-    }
 
     public getLimiteUsers() : number {
         return this.limiteUsers;
@@ -145,6 +153,60 @@ export class user {
         this.limiteLikes = limiteLikes;
     }
 
+    public getSuperLikesCount() : number {
+        return this.superLikesCount;
+    }
+
+    public setSuperLikesCount(superLikesCount : number) : void {
+        this.superLikesCount = superLikesCount;
+    }
+
+    public getLikesCount() : number {
+        return this.likesCount;
+    }
+
+    public setLikesCount(limiteLikes : number) : void {
+        this.limiteLikes = limiteLikes;
+    }
+
+    public getDeslikesCount() : number {
+        return this.deslikesCount;
+    }
+
+    public setDeslikesCount(deslikesCount : number) : void {
+        this.deslikesCount = deslikesCount;
+    }
+
+    public getEventsCount() : number {
+        return this.eventsCount;
+    }
+
+    public setEventsCount(eventsCount : number) : void {
+        this.eventsCount = eventsCount;
+    }
     
+    public getUsersCount() : number {
+        return this.usersCount;
+    }
+
+    public setUsersCount(usersCount : number) : void {
+        this.usersCount = usersCount;
+    }
+
+    public getLocalidade () : string {
+        return this.localidade;
+    }
+
+    public setLocalidade(localidade : string){ 
+        this.localidade = localidade;
+    }
+
+    public getEmail() : string {
+        return this.email;
+    }
+
+    public setEmail(email: string){
+        this.email= email;
+    }
 
 }
